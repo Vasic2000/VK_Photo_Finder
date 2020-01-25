@@ -1,16 +1,16 @@
-package cz.vasic2000.vk_photo_finder.ui.share;
+package cz.vasic2000.vk_photo_finder.ui.about_developer;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class AboutDeveloperViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public AboutDeveloperViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("This is abot developer fragment");
     }
 
     public LiveData<String> getText() {

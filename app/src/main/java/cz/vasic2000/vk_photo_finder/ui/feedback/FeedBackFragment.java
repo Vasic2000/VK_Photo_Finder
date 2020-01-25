@@ -1,4 +1,4 @@
-package cz.vasic2000.vk_photo_finder.ui.send;
+package cz.vasic2000.vk_photo_finder.ui.feedback;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import cz.vasic2000.vk_photo_finder.R;
 
-public class SendFragment extends Fragment {
+public class FeedBackFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private FeedBackViewModel feedBackViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        feedBackViewModel =
+                ViewModelProviders.of(this).get(FeedBackViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_feedback, container, false);
+        final TextView textView = root.findViewById(R.id.text_feedback);
+        feedBackViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -31,13 +31,13 @@
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="cz.vasic2000.vk_photo_finder.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
+        android:name="cz.vasic2000.vk_photo_finder.ui.about_developer.ShareFragment"
+        android:label="@string/menu_about_developer"
+        tools:layout="@layout/fragment_about_developer" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="cz.vasic2000.vk_photo_finder.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        android:name="cz.vasic2000.vk_photo_finder.ui.feedback.FeedBackFragment"
+        android:label="@string/menu_feedback"
+        tools:layout="@layout/fragment_feedback" />
 </navigation>

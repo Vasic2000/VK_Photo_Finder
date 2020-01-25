@@ -1,4 +1,4 @@
-package cz.vasic2000.vk_photo_finder.ui.tools;
+package cz.vasic2000.vk_photo_finder.ui.about_author;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,20 +14,20 @@ import androidx.lifecycle.ViewModelProviders;
 
 import cz.vasic2000.vk_photo_finder.R;
 
-public class ToolsFragment extends Fragment {
+public class AboutAuthorFragment extends Fragment {
 
-    private ToolsViewModel toolsViewModel;
+    private AboutAuthorViewModel aboutAuthorViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        toolsViewModel =
-                ViewModelProviders.of(this).get(ToolsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_tools, container, false);
-        final TextView textView = root.findViewById(R.id.text_tools);
-        toolsViewModel.getText().observe(this, new Observer<String>() {
+        aboutAuthorViewModel =
+                ViewModelProviders.of(this).get(AboutAuthorViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_about_author, container, false);
+        final TextView textView = root.findViewById(R.id.text_slideshow);
+        aboutAuthorViewModel.getText().observe(this, new Observer<String>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onChanged(@Nullable String s){
+                    textView.setText(s);
             }
         });
         return root;

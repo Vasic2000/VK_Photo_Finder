@@ -1,16 +1,16 @@
-package cz.vasic2000.vk_photo_finder.ui.slideshow;
+package cz.vasic2000.vk_photo_finder.ui.about_app;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class AboutAppViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public AboutAppViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is about App fragment");
     }
 
     public LiveData<String> getText() {

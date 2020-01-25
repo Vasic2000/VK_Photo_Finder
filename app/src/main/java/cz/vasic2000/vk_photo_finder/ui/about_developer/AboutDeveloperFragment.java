@@ -1,4 +1,4 @@
-package cz.vasic2000.vk_photo_finder.ui.slideshow;
+package cz.vasic2000.vk_photo_finder.ui.about_developer;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import cz.vasic2000.vk_photo_finder.R;
 
-public class SlideshowFragment extends Fragment {
+public class AboutDeveloperFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private AboutDeveloperViewModel aboutDeveloperModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        aboutDeveloperModel =
+                ViewModelProviders.of(this).get(AboutDeveloperViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_about_developer, container, false);
+        final TextView textView = root.findViewById(R.id.text_about_developer);
+        aboutDeveloperModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

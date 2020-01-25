@@ -3,41 +3,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_start">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="cz.vasic2000.vk_photo_finder.ui.home.HomeFragment"
+        android:id="@+id/nav_start"
+        android:name="cz.vasic2000.vk_photo_finder.ui.start.StartFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_share"
+            app:destination="@id/nav_about_developer" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_send"
+            app:destination="@id/nav_feedback" />
+        <action
+            android:id="@+id/action_nav_start_to_galleryFragment"
+            app:destination="@id/nav_aboutApp" />
+        <action
+            android:id="@+id/action_nav_start_to_aboutAppFragment"
+            app:destination="@id/nav_aboutApp" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="cz.vasic2000.vk_photo_finder.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="cz.vasic2000.vk_photo_finder.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="cz.vasic2000.vk_photo_finder.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
-
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="cz.vasic2000.vk_photo_finder.ui.about_developer.ShareFragment"
+        android:id="@+id/nav_about_developer"
+        android:name="cz.vasic2000.vk_photo_finder.ui.about_developer.AboutDeveloperFragment"
         android:label="@string/menu_about_developer"
-        tools:layout="@layout/fragment_about_developer" />
+        tools:layout="@layout/fragment_about_developer" >
+        <action
+            android:id="@+id/action_nav_share_to_nav_send"
+            app:destination="@id/nav_feedback" />
+        <action
+            android:id="@+id/action_nav_about_developer_to_galleryFragment"
+            app:destination="@id/nav_aboutApp" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_send"
+        android:id="@+id/nav_feedback"
         android:name="cz.vasic2000.vk_photo_finder.ui.feedback.FeedBackFragment"
         android:label="@string/menu_feedback"
-        tools:layout="@layout/fragment_feedback" />
+        tools:layout="@layout/fragment_feedback" >
+        <action
+            android:id="@+id/action_nav_send_to_nav_share"
+            app:destination="@id/nav_about_developer" />
+        <action
+            android:id="@+id/action_nav_feedback_to_galleryFragment"
+            app:destination="@id/nav_aboutApp" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_aboutApp"
+        android:name="cz.vasic2000.vk_photo_finder.ui.about_app.AboutAppFragment"
+        android:label="@string/menu_aboutApp"
+        tools:layout="@layout/fragment_about_app">
+        <action
+            android:id="@+id/action_galleryFragment_to_nav_about_developer"
+            app:destination="@id/nav_about_developer" />
+        <action
+            android:id="@+id/action_galleryFragment_to_nav_feedback"
+            app:destination="@id/nav_feedback" />
+    </fragment>
+
 </navigation>

@@ -1,4 +1,4 @@
-package cz.vasic2000.vk_photo_finder.ui.about_developer;
+package cz.vasic2000.vk_photo_finder.ui.about_app;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import cz.vasic2000.vk_photo_finder.R;
 
-public class ShareFragment extends Fragment {
+public class AboutAppFragment extends Fragment {
 
-    private AboutDeveloperViewModel aboutDeveloperModel;
+    private AboutAppViewModel aboutAppViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        aboutDeveloperModel =
-                ViewModelProviders.of(this).get(AboutDeveloperViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_about_developer, container, false);
-        final TextView textView = root.findViewById(R.id.text_about_developer);
-        aboutDeveloperModel.getText().observe(this, new Observer<String>() {
+        aboutAppViewModel =
+                ViewModelProviders.of(this).get(AboutAppViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_about_app, container, false);
+        final TextView textView = root.findViewById(R.id.text_aboutApp);
+        aboutAppViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

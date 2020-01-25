@@ -1,16 +1,16 @@
-package cz.vasic2000.vk_photo_finder.ui.gallery;
+package cz.vasic2000.vk_photo_finder.ui.start;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class StartViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public StartViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This start fragment");
     }
 
     public LiveData<String> getText() {
